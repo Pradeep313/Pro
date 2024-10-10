@@ -215,7 +215,21 @@ tbody tr:nth-child(even) {
           <thead>
             <tr>
                 <th>DAY</th>
-                <th  ><p id="box11"></p></th>
+                <th id="box01"></th>
+                <th id="box02"></th>
+                <th id="box03"></th>
+                <th id="box04"></th>
+                <th id="box05"></th>
+                <th id="box06"></th>
+                <th id="box07"></th> 
+                <th id="box08"></th> 
+                
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>MON</td>
+              <th id="box11"></th>
                 <th id="box12"></th>
                 <th id="box13"></th>
                 <th id="box14"></th>
@@ -223,69 +237,55 @@ tbody tr:nth-child(even) {
                 <th id="box16"></th>
                 <th id="box17"></th> 
                 <th id="box18"></th> 
-                
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>MON</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
               
             </tr>
             <tr>
                 <td>TUE</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <th id="box21"></th>
+                <th id="box22"></th>
+                <th id="box23"></th>
+                <th id="box24"></th>
+                <th id="box25"></th>
+                <th id="box26"></th>
+                <th id="box27"></th> 
+                <th id="box28"></th> 
                 
               </tr><tr>
                 <td>WED</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <th id="box31"></th>
+                <th id="box32"></th>
+                <th id="box33"></th>
+                <th id="box34"></th>
+                <th id="box35"></th>
+                <th id="box36"></th>
+                <th id="box37"></th> 
+                <th id="box38"></th> 
                 
               </tr><tr>
                 <td>Thur</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <th id="box41"></th>
+                <th id="box42"></th>
+                <th id="box43"></th>
+                <th id="box44"></th>
+                <th id="box45"></th>
+                <th id="box46"></th>
+                <th id="box47"></th> 
+                <th id="box48"></th> 
                 
               </tr><tr>
                 <td>FRI</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <th id="box51"></th>
+                <th id="box52"></th>
+                <th id="box53"></th>
+                <th id="box54"></th>
+                <th id="box55"></th>
+                <th id="box56"></th>
+                <th id="box57"></th> 
+                <th id="box58"></th> 
                 
               </tr>
 
-            <!-- Add more rows and cells as needed -->
+            
           </tbody>
         </table>
 </div>
@@ -450,10 +450,19 @@ tbody tr:nth-child(even) {
                     let length_news = data_news.table.rows.length;
                     //console.log(length_news);
                     //console.log(data_news.table.rows[1].c[1].v);
+                    let box01 = document.getElementById("box01");
+                    let box02 = document.getElementById("box02");
+                    let box03 = document.getElementById("box03");
+                    let box04 = document.getElementById("box04");
+                    let box05 = document.getElementById("box05");
+                    let box06 = document.getElementById("box06");
+                    let box07 = document.getElementById("box07");
+                    let box08 = document.getElementById("box08");
                     let box11 = document.getElementById("box11");
                     let box12 = document.getElementById("box12");
                     let box13 = document.getElementById("box13");
                     let box14 = document.getElementById("box14");
+                    let box15 = document.getElementById("box15");
                     let box16 = document.getElementById("box16");
                     let box17 = document.getElementById("box17");
                     let box18 = document.getElementById("box18");
@@ -461,6 +470,7 @@ tbody tr:nth-child(even) {
                     let box22 = document.getElementById("box22");
                     let box23 = document.getElementById("box23");
                     let box24 = document.getElementById("box24");
+                    let box25 = document.getElementById("box25");
                     let box26 = document.getElementById("box26");
                     let box27 = document.getElementById("box27");
                     let box28 = document.getElementById("box28");
@@ -468,6 +478,7 @@ tbody tr:nth-child(even) {
                     let box32 = document.getElementById("box32");
                     let box33 = document.getElementById("box33");
                     let box34 = document.getElementById("box34");
+                    let box35 = document.getElementById("box35");
                     let box36 = document.getElementById("box36");
                     let box37 = document.getElementById("box37");
                     let box38 = document.getElementById("box38");
@@ -475,6 +486,7 @@ tbody tr:nth-child(even) {
                     let box42 = document.getElementById("box42");
                     let box43 = document.getElementById("box43");
                     let box44 = document.getElementById("box44");
+                    let box45 = document.getElementById("box45");
                     let box46 = document.getElementById("box46");
                     let box47 = document.getElementById("box47");
                     let box48 = document.getElementById("box48");
@@ -482,13 +494,23 @@ tbody tr:nth-child(even) {
                     let box52 = document.getElementById("box52");
                     let box53 = document.getElementById("box53");
                     let box54 = document.getElementById("box54");
+                    let box55 = document.getElementById("box55");
                     let box56 = document.getElementById("box56");
                     let box57 = document.getElementById("box57");
                     let box58 = document.getElementById("box58");
+                    box01.innerHTML = data_news.table.rows[0].c[1].v;
+                    box02.innerHTML = data_news.table.rows[0].c[2].v;
+                    box03.innerHTML = data_news.table.rows[0].c[3].v;
+                    box04.innerHTML = data_news.table.rows[0].c[4].v;
+                    box05.innerHTML = data_news.table.rows[0].c[5].v;
+                    box06.innerHTML = data_news.table.rows[0].c[6].v;
+                    box07.innerHTML = data_news.table.rows[0].c[7].v;
+                    box08.innerHTML = data_news.table.rows[0].c[8].v;
                     box11.innerHTML = data_news.table.rows[1].c[1].v;
                     box12.innerHTML = data_news.table.rows[1].c[2].v;
                     box13.innerHTML = data_news.table.rows[1].c[3].v;
                     box14.innerHTML = data_news.table.rows[1].c[4].v;
+                    box15.innerHTML = data_news.table.rows[1].c[5].v;
                     box16.innerHTML = data_news.table.rows[1].c[6].v;
                     box17.innerHTML = data_news.table.rows[1].c[7].v;
                     box18.innerHTML = data_news.table.rows[1].c[8].v;
@@ -496,6 +518,7 @@ tbody tr:nth-child(even) {
                     box22.innerHTML = data_news.table.rows[2].c[2].v;
                     box23.innerHTML = data_news.table.rows[2].c[3].v;
                     box24.innerHTML = data_news.table.rows[2].c[4].v;
+                    box25.innerHTML = data_news.table.rows[2].c[5].v;
                     box26.innerHTML = data_news.table.rows[2].c[6].v;
                     box27.innerHTML = data_news.table.rows[2].c[7].v;
                     box28.innerHTML = data_news.table.rows[2].c[8].v;
@@ -503,6 +526,7 @@ tbody tr:nth-child(even) {
                     box32.innerHTML = data_news.table.rows[3].c[2].v;
                     box33.innerHTML = data_news.table.rows[3].c[3].v;
                     box34.innerHTML = data_news.table.rows[3].c[4].v;
+                    box35.innerHTML = data_news.table.rows[3].c[5].v;
                     box36.innerHTML = data_news.table.rows[3].c[6].v;
                     box37.innerHTML = data_news.table.rows[3].c[7].v;
                     box38.innerHTML = data_news.table.rows[3].c[8].v;
@@ -510,6 +534,7 @@ tbody tr:nth-child(even) {
                     box42.innerHTML = data_news.table.rows[4].c[2].v;
                     box43.innerHTML = data_news.table.rows[4].c[3].v;
                     box44.innerHTML = data_news.table.rows[4].c[4].v;
+                    box45.innerHTML = data_news.table.rows[4].c[5].v;
                     box46.innerHTML = data_news.table.rows[4].c[6].v;
                     box47.innerHTML = data_news.table.rows[4].c[7].v;
                     box48.innerHTML = data_news.table.rows[4].c[8].v;
@@ -517,6 +542,7 @@ tbody tr:nth-child(even) {
                     box52.innerHTML = data_news.table.rows[5].c[2].v;
                     box53.innerHTML = data_news.table.rows[5].c[3].v;
                     box54.innerHTML = data_news.table.rows[5].c[4].v;
+                    box55.innerHTML = data_news.table.rows[5].c[5].v;
                     box56.innerHTML = data_news.table.rows[5].c[6].v;
                     box57.innerHTML = data_news.table.rows[5].c[7].v;
                     box58.innerHTML = data_news.table.rows[5].c[8].v;
