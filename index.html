@@ -61,6 +61,127 @@ ol.gradient-list > li::before, ol.gradient-list > li::after {
   border-radius: 1rem 1rem 0 1rem; 
 
 
+        .loader {
+
+            position: relative;
+            top: 35vh;
+            left: 35vw;
+
+            height: 200px;
+            width: 200px;
+
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background:
+                radial-gradient(farthest-side, #ffa516 94%, #0000) top/8px 8px no-repeat,
+                conic-gradient(#0000 30%, #ffa516);
+            -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
+            animation: l13 1s infinite linear;
+        }
+
+
+
+
+
+        .noob {
+
+            width: 100%;
+
+            height: 50%;
+            background-color: grey;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .ids {
+
+
+            width: 100%;
+
+
+            text-align: center;
+            background-color: grey;
+            color: black;
+            justify-content: center;
+            align-items: center;
+        }
+
+        table {
+            border: 2px solid black;
+
+
+
+
+
+        }
+
+        th,
+        td {
+            border: 1px solid #000000;
+            padding: 10px;
+
+            text-align: left;
+            text-align: center;
+
+        }
+
+
+
+        @media all and (width <768px) {
+            li {
+                margin: 3rem auto;
+                padding: 3rem 2rem 2rem;
+
+                
+                width: 100vw;
+                left: 0;
+            }
+
+            h3 {
+                font-size: 2.25rem;
+                margin: 0 0 2rem;
+            }
+
+            h3::before {
+                margin-right: 1.5rem;
+            }
+
+
+            .table {
+                border: 2px solid black;
+                position: relative;
+                rotate: 90deg;
+                width: 50vh;
+                height: 50vw;
+                top: 50vw;
+
+
+
+            }
+
+            th,
+            td {
+                border: 1px solid #000000;
+
+
+                text-align: center;
+
+
+            }
+
+        }
+
+
+        @keyframes l13 {
+            100% {
+                transform: rotate(1turn)
+            }
+        }
+
+
     </style>
 </head>
 <body>
