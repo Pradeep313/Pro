@@ -65,45 +65,234 @@ ol.gradient-list > li::before, ol.gradient-list > li::after {
 </head>
 <body>
       
-  <ol class="gradient-list">
-    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-    <li>Aenean tincidunt elit at ipsum cursus, vitae interdum nulla suscipit.</li>
-    <li>Curabitur in orci vel risus facilisis accumsan.</li>
-    <li>Morbi eleifend tortor lacinia sapien sagittis, quis pellentesque felis egestas.</li>
-    <li>Aenean viverra dui quis leo lacinia fringilla.</li>
-    <li>Sed varius lectus ac condimentum egestas.</li>
-    <li>Maecenas faucibus lorem nec lorem posuere, a rhoncus velit porttitor.</li>
-    <li>Proin porta arcu ac elit malesuada pulvinar.</li>
-    <li>Phasellus vitae felis sit amet mi gravida volutpat.</li>
-    <li>Curabitur vulputate urna non efficitur interdum.</li>
-    <li>Curabitur dapibus enim in consectetur imperdiet.</li>
-    <li>Suspendisse consectetur nibh non condimentum porta.</li>
-    <li>Ut placerat diam in cursus aliquet.</li>
-    <li>Praesent vitae quam id tortor malesuada viverra ut at elit.</li>
-    <li>Vivamus feugiat justo id volutpat rutrum.</li>
-    <li>Nulla volutpat erat non mauris condimentum, nec consequat elit posuere.</li>
-    <li>Vestibulum eu risus efficitur, porta lacus a, mollis metus.</li>
-    <li>Maecenas finibus arcu vel urna commodo, ac bibendum massa vestibulum.</li>
-    <li>Praesent eleifend leo eget consectetur interdum.</li>
-    <li>Suspendisse et lectus gravida, interdum mauris aliquet, mattis purus.</li>
-    <li>In nec nisl feugiat, blandit odio non, vulputate neque.</li>
-    <li>Sed id felis mollis, bibendum orci a, condimentum augue.</li>
-    <li>Etiam eleifend ipsum nec nibh aliquam, non commodo risus eleifend.</li>
-    <li>Curabitur in ipsum eget lacus blandit maximus in at sem.</li>
-    <li>Curabitur sagittis ante nec libero maximus, ut imperdiet elit egestas.</li>
-    <li>Proin congue felis sed ultrices elementum.</li>
-    <li>Duis sit amet velit et lectus eleifend interdum non quis ex.</li>
-    <li>Praesent congue lectus a felis pharetra malesuada.</li>
-    <li>Sed vel mauris condimentum, egestas dolor eu, porttitor nisl.</li>
-    <li>Donec sed elit tincidunt, accumsan magna sed, facilisis libero.</li>
-    <li>Curabitur vel purus quis justo placerat euismod mollis ac arcu.</li>
-    <li>Sed eget mi et justo luctus mollis ut non augue.</li>
-    <li>Suspendisse sit amet lectus et magna euismod tempor.</li>
-    <li>Vestibulum accumsan velit et ipsum pellentesque, vitae ultricies erat blandit.</li>
-    <li>Pellentesque vel dolor ac risus efficitur convallis.</li>
-    <li>Maecenas feugiat quam at facilisis dapibus.</li>
-    <li>Cras commodo leo sit amet lacus lacinia, eget rutrum sem sodales.</li>
-  </ol>
+  <ol class="gradient-list" id="teacher_data">
+  </od>
+      
+    <script>
+
+        function hellos() {
+            console.log("hi");
+        };
+        let SHEET_IDB = "1o2-dh2Shhj9wECj7sU57FJwXuiuvcI7V-eKpHyFdIxw";
+        let SHEET_TITLE = "branch";
+        let SHEET_RANGEB = "A2:A10000";
+
+        let FULL_URL_blogger =
+            "https://docs.google.com/spreadsheets/d/" +
+            SHEET_IDB +
+            "/gviz/tq?sheet=" +
+            SHEET_TITLE +
+            "&range=" +
+            SHEET_RANGEB;
+
+        fetch(FULL_URL_blogger)
+            .then((res) => res.text())
+            .then((rep) => {
+                let datas = JSON.parse(rep.substr(47).slice(0, -2));
+
+                let blogger_name = document.getElementById("view");
+                let teacher_data = document.getElementById("teacher_data");
+                let length = datas.table.rows.length;
+                console.log(length);
+
+                let i = 1;
+                let data_list = [];
+                for (i = 1; i < length + 1; i++) {
+                    //let NewBoxBlogger = document.createElement("div");
+                    //let space = document.createElement("br");
+                    //NewBoxBlogger.id = "box" + i;
+                    //NewBoxBlogger.className = "box-blogger";
+                    //blogger_name.append(NewBoxBlogger);
+                    //console.log(datas.table.rows[i - 1].c[0].v);
+
+                    data_list.push(datas.table.rows[i - 1].c[0].v);
+
+                    // final_dta_data="<option value="+ i+">"+datas.table.rows[i - 1].c[0].v+"</option>" +"<br>"+final_dta_data ;
+                    //console.log(final_dta_data);
+
+                    //let final_dta_d1= final_dta_d1+"<br>"+ final_dta_data;
+
+
+                    //blogger_name.innerHTML =
+                    //  "<div class=" + "news_blog" + " > <span class=" + "hedingnews" + ">" + data.table.rows[i - 1].c[0].v + "</span> <span class=" + "arrownews" + ">" + data.table.rows[i - 1].c[1].v + "</span> <br>";
+                    //    "<option value="+i+">"+datas.table.rows[i - 1].c[0].v+"</option>";
+                    if (
+                        datas.table.rows[i - 1].c[0].v == " "
+                    ) {
+
+                        break;
+                    }
+                };
+                //console.log(data_list);
+                function remove_items(arr) {
+                    let item_each_data = {};
+
+                    arr.forEach(function (i) {
+                        if (!item_each_data[i]) {
+                            item_each_data[i] = true;
+                        }
+                    });
+                    return Object.keys(item_each_data);
+
+
+                }
+                let duplicate_elements = [];
+                duplicate_elements = remove_items(data_list);
+                console.log(duplicate_elements);
+                console.log(duplicate_elements.length);
+                let final_dta_data = "";
+                let te_dta_d = "";
+                length_d = duplicate_elements.length
+
+                for (let i = 0; i < duplicate_elements.length; i++) {
+                    length = length - 1;
+
+                    final_dta_data = "<option value=" + i + ">" + duplicate_elements[duplicate_elements.length - i - 1] + "</option>" + final_dta_data;
+                    te_dta_d = '<li  onclick="viwer(this)"><h3>' + duplicate_elements[duplicate_elements.length - i - 1] + "</h3></li>" + te_dta_d
+
+                };
+
+                teacher_data.innerHTML = te_dta_d;
+                console.log(te_dta_d);
+
+
+                blogger_name.innerHTML = '<option value="' + i + 1 + '" selected="selected">Select Student Name</option>' + final_dta_data;
+
+                console.log(final_dta_data);
+
+            });
+
+
+        function viwer(e) {
+            //var noobs = document.getElementsByClassName("noob");
+            var pros = document.getElementsByClassName("pro");
+            var teacherdatas = document.getElementsByClassName("list_d_1");
+            document.querySelector(".loader").style.display = "block";
+            document.querySelector(".list_d_1").style.display = "none";
+
+
+
+
+
+
+
+            console.log(e.innerText);
+            text_data = e.innerText;
+            //noobs.style.display="block";
+            showview(text_data);
+
+
+
+
+
+
+
+        };
+
+
+        function views() {
+            var sheetidn = document.getElementById("view");
+            var value = sheetidn.value;
+
+
+            var sheetidn1 = sheetidn.options[sheetidn.selectedIndex].text;
+            console.log(sheetidn1);
+            showview(sheetidn1);
+
+
+
+
+
+        };
+
+        function showview(sheetidn1) {
+
+            let SHEET_IDN = "1JvLXp8yS5rUviW4gEKfmExyki4fmIfIDHQEqZr_161E";
+            //let SHEET_TITLEE = "B.tech4";
+            let SHEET_RANGEN = "A1:I6";
+            let FULL_URL_news =
+                //"https://docs.google.com/spreadsheets/d/1JvLXp8yS5rUviW4gEKfmExyki4fmIfIDHQEqZr_161E/gviz/tq?sheet=B.tech4&range=A1:I6";
+                // https://docs.google.com/spreadsheets/d/1nnD_JIr2XGb1oVrzOe0YFRQvW-C36kNJxI0DEXFpjEg/gviz/tq?sheet=A2:B10000
+                "https://docs.google.com/spreadsheets/d/" +
+                SHEET_IDN +
+                "/gviz/tq?sheet=" +
+                sheetidn1 +
+                "&range=" +
+                SHEET_RANGEN;
+
+            fetch(FULL_URL_news)
+                .then((res) => res.text())
+                .then((rep) => {
+                    let data_news = JSON.parse(rep.substr(47).slice(0, -2));
+
+                    //console.log(data_news);
+                    let length_news = data_news.table.rows.length;
+                    console.log(length_news);
+                    if (length_news == 2) {
+                        
+
+                        print("hi")
+                       
+                        // document.querySelector(".loader").style.display = "none";
+
+                        // document.querySelector(".noob").style.display = "none";
+                        // document.querySelector(".pro").style.display = "none";
+                        // document.querySelector(".list_d_1").style.display = "block";
+                        // length_news=2;
+
+
+
+
+                    }
+                    //console.log(length_news);
+                    //console.log(data_news.table.rows[1].c[1].v);
+
+                    for (let row = 0; row < data_news.table.rows.length; row++) {
+                        for (let col = 0; col <= 8; col++) {
+                            let cellId = `box${row}${col}`;
+                            let cellElement = document.getElementById(cellId);
+                            if (cellElement) {
+                                cellElement.innerHTML = data_news.table.rows[row].c[col].v;
+                            }
+                        }
+                    }
+
+
+
+
+
+                if (length_news != 2) {
+                        setTimeout(display_view, 3000);
+                }
+        
+
+
+
+
+                });
+
+
+
+
+
+           
+
+
+
+        }
+        ;
+
+        function display_view() {
+            document.querySelector(".loader").style.display = "none";
+
+            document.querySelector(".noob").style.display = "block";
+            document.querySelector(".pro").style.display = "block";
+        }
+
+
+
+
+    </script>
   
 </body>
 </html>
